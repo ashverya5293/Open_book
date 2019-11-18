@@ -7,11 +7,12 @@
 __main  FUNCTION 
 		MOV R7,#1;
 		
-		VLDR.F32 S20,=100  ; Enter the radius r value in number of pixels(should be < 320)
+		
 		VLDR.F32 S23,=320 ; y offset
 		VLDR.F32 S24,=240 ; x offset
 		
-outer_loop	MOV R0,#0;
+outer_loop	VLDR.F32 S20,=100  ; Enter the radius r value in number of pixels(should be < 320)
+			MOV R0,#0;
 			MOV R1,#0;
 			CMP R7,#360;
 			BLT loop ;
@@ -93,7 +94,10 @@ calc_cosine	VDIV.F32 S6,S6,S11;  Computing cosx term
 		VCVT.S32.F32 S22,S22
 		
 		VMOV.F32 R1,S22;  Converting floating point to integer value
-		MOV R2,#100  ; Enter radius value
+		
+		VCVT.S32.F32 S20,S20
+		VMOV.F32 R2,S20  ; Display the radius
+		MOV R3,R7; Value of theta (in degrees)
 		;BL printMsg
 		;BL printMsg2p
 		

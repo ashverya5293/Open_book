@@ -37,7 +37,7 @@ void printMsg4p(const int a, const int b, const int c, const int d, const int e)
 	 char Msg[100];
 	 char *ptr;
 	 // Printing the message
-	sprintf(Msg,"\nY-Coordinate:  ");
+	sprintf(Msg,"\nY-Coordinate:(After adding offset 320)  ");
 	 ptr = Msg ;
    while(*ptr != '\0')
 	 {
@@ -53,7 +53,7 @@ void printMsg4p(const int a, const int b, const int c, const int d, const int e)
       ++ptr;
    }
 	 // Printing the message
-	 sprintf(Msg,"\nX- coordinate :");
+	 sprintf(Msg,"\nX- coordinate(After adding offset 240) :");
 	 ptr = Msg ;
    while(*ptr != '\0')
 	 {
@@ -83,14 +83,14 @@ void printMsg4p(const int a, const int b, const int c, const int d, const int e)
       ++ptr;
    }
 	 // Printing the message
-	// sprintf(Msg,"\nPrinting Four parameter d: ");
-	 /*ptr = Msg ;
+	 sprintf(Msg,"\nTheta(in Degrees) : ");
+	 ptr = Msg ;
    while(*ptr != '\0')
 	 {
       ITM_SendChar(*ptr);
       ++ptr;
    }
-	 //sprintf(Msg, "%x", d);
+	 sprintf(Msg, "%d", d);
 	 ptr = Msg ;
    while(*ptr != '\0')
 	 {
@@ -98,7 +98,7 @@ void printMsg4p(const int a, const int b, const int c, const int d, const int e)
       ++ptr;
 	 }
 
-	 // Printing the message
+	 /* Printing the message
 	 //sprintf(Msg,"\nPrinting Fifth parameter e (check this value is correct or not): ");
 	 ptr = Msg ;
    while(*ptr != '\0')
